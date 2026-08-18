@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Piyush Pal | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #02030a;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* =========================
+           SPACE BACKGROUND
+        ========================= */
+
+        body {
+            background:
+                radial-gradient(circle at 20% 20%, #27104d 0%, transparent 25%),
+                radial-gradient(circle at 80% 30%, #101d55 0%, transparent 25%),
+                radial-gradient(circle at 50% 80%, #16082d 0%, transparent 30%),
+                #02030a;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: 0;
+            z-index: -2;
+
+            background-image:
+                radial-gradient(2px 2px at 10% 20%, white, transparent),
+                radial-gradient(1px 1px at 20% 70%, white, transparent),
+                radial-gradient(2px 2px at 30% 40%, #b76cff, transparent),
+                radial-gradient(1px 1px at 40% 15%, white, transparent),
+                radial-gradient(2px 2px at 50% 80%, #668cff, transparent),
+                radial-gradient(1px 1px at 60% 30%, white, transparent),
+                radial-gradient(2px 2px at 70% 60%, #d26cff, transparent),
+                radial-gradient(1px 1px at 80% 15%, white, transparent),
+                radial-gradient(2px 2px at 90% 75%, #708cff, transparent);
+
+            background-size: 500px 500px;
+            opacity: 0.8;
+        }
+
+        /* =========================
+           NAVBAR
+        ========================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+
+            padding: 20px 5%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(2, 3, 10, 0.75);
+            backdrop-filter: blur(15px);
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 30px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #b35cff;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #ddd;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #b35cff;
+        }
+
+        .download {
+            padding: 11px 20px;
+            border: 1px solid #a855f7;
+            border-radius: 25px;
+
+            transition: 0.3s;
+        }
+
+        .download:hover {
+            background: #a855f7;
+            box-shadow: 0 0 25px #8b5cf6;
+        }
+
+        /* =========================
+           HERO
+        ========================= */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            padding: 130px 10% 80px;
+
+            gap: 60px;
+        }
+
+        .hero-text {
+            max-width: 600px;
+        }
+
+        .hello {
+            color: #c260ff;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: 80px;
+            line-height: 1;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(
+                90deg,
+                #b85cff,
+                #657dff
+            );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero h2 {
+            font-size: 25px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 span {
+            color: #b35cff;
+        }
+
+        .hero p {
+            color: #aaa;
+            line-height: 1.8;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .btn {
+            padding: 15px 25px;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary {
+            background: linear-gradient(
+                90deg,
+                #a855f7,
+                #4f7cff
+            );
+
+            box-shadow: 0 0 25px rgba(168,85,247,0.3);
+        }
+
+        .secondary {
+            border: 1px solid #777;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+        }
+
+        /* =========================
+           PROFILE IMAGE
+        ========================= */
+
+        .profile-area {
+            position: relative;
+
+            width: 440px;
+            height: 440px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile {
+            width: 320px;
+            height: 320px;
+
+            border-radius: 50%;
+
+            padding: 6px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #b55cff,
+                    #536fff
+                );
+
+            box-shadow:
+                0 0 30px #8b5cf6,
+                0 0 80px rgba(83,111,255,0.4);
+
+            z-index: 2;
+        }
+
+        .profile img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            border-radius: 50%;
+
+            display: block;
+        }
+
+        .orbit {
+            position: absolute;
+
+            width: 470px;
+            height: 170px;
+
+            border: 2px solid rgba(185,92,255,0.55);
+
+            border-radius: 50%;
+
+            transform: rotate(-20deg);
+        }
+
+        .orbit2 {
+            position: absolute;
+
+            width: 500px;
+            height: 190px;
+
+            border: 1px solid rgba(80,120,255,0.45);
+
+            border-radius: 50%;
+
+            transform: rotate(25deg);
+        }
+
+        .planet {
+            position: absolute;
+
+            width: 50px;
+            height: 50px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle at 30% 30%,
+                    #9a8cff,
+                    #2c1765
+                );
+
+            box-shadow: 0 0 25px #806cff;
+
+            top: 25px;
+            right: 5px;
+        }
+
+        /* =========================
+           SECTION
+        ========================= */
+
+        section {
+            padding: 100px 7%;
+        }
+
+        .heading {
+            margin-bottom: 45px;
+        }
+
+        .heading small {
+            color: #bd5cff;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .heading h2 {
+            font-size: 42px;
+            margin-top: 10px;
+        }
+
+        .heading h2 span {
+            color: #b55cff;
+        }
+
+        /* =========================
+           ABOUT
+        ========================= */
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255,255,255,0.035);
+
+            border: 1px solid rgba(255,255,255,0.12);
+
+            border-radius: 18px;
+
+            padding: 30px;
+
+            backdrop-filter: blur(10px);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: #a855f7;
+
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 0 30px rgba(168,85,247,0.15);
+        }
+
+        .card h3 {
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .card p {
+            color: #aaa;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .details {
+            display: grid;
+            gap: 15px;
+        }
+
+        .details strong {
+            color: white;
+        }
+
+        .details span {
+            color: #aaa;
+        }
+
+        /* =========================
+           SKILLS
+        ========================= */
+
+        .skills {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .skill {
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            transition: 0.3s;
+        }
+
+        .skill:hover {
+            transform: translateY(-6px);
+
+            border-color: #a855f7;
+
+            box-shadow:
+                0 0 25px rgba(168,85,247,0.15);
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+
+            margin-bottom: 15px;
+        }
+
+        .skill-header span {
+            color: #aaa;
+        }
+
+        .bar {
+            height: 7px;
+
+            background: #191927;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+        }
+
+        .progress {
+            height: 100%;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #b35cff,
+                    #527dff
+                );
+        }
+
+        /* =========================
+           PROJECTS
+        ========================= */
+
+        .projects {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .project {
+            min-height: 280px;
+
+            padding: 28px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(168,85,247,0.08),
+                    rgba(40,60,140,0.05)
+                );
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            border-radius: 18px;
+
+            transition: 0.3s;
+        }
+
+        .project:hover {
+            transform: translateY(-8px);
+
+            border-color: #a855f7;
+
+            box-shadow:
+                0 0 30px rgba(168,85,247,0.15);
+        }
+
+        .project-icon {
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .project h3 {
+            font-size: 21px;
+            margin-bottom: 12px;
+        }
+
+        .project p {
+            color: #aaa;
+            line-height: 1.7;
+        }
+
+        .tags {
+            margin-top: 25px;
+
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            padding: 6px 10px;
+
+            font-size: 12px;
+
+            color: #cca7ff;
+
+            background: rgba(168,85,247,0.1);
+
+            border: 1px solid rgba(168,85,247,0.25);
+
+            border-radius: 20px;
+        }
+
+        /* ==================================
+   EDUCATION
+================================== */
+
+.education-timeline {
+
+    position: relative;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding-left: 45px;
+
+}
+
+
+/* Vertical glowing line */
+
+.education-timeline::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 10px;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 2px;
+
+    background:
+        linear-gradient(
+            #b45cff,
+            #527dff
+        );
+
+    box-shadow:
+        0 0 12px #a855f7;
+
+}
+
+
+/* Education card */
+
+.education-card {
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 1.5fr 0.7fr;
+
+    gap: 35px;
+
+    padding: 30px;
+
+    margin-bottom: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20,20,45,0.88),
+            rgba(7,8,20,0.92)
+        );
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    border-radius: 18px;
+
+    backdrop-filter: blur(15px);
+
+    transition: 0.35s;
+
+}
+
+
+/* Timeline circle */
+
+.education-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 14px;
+
+    height: 14px;
+
+    border-radius: 50%;
+
+    left: -43px;
+
+    top: 45px;
+
+    background: #ffffff;
+
+    border: 3px solid #a855f7;
+
+    box-shadow:
+        0 0 10px #a855f7,
+        0 0 25px #a855f7;
+
+}
+
+
+.education-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: #a855f7;
+
+    box-shadow:
+        0 0 35px rgba(168,85,247,0.15);
+
+}
+
+
+/* Year */
+
+.year {
+
+    display: block;
+
+    color: #b45cff;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 12px;
+
+}
+
+
+/* Main heading */
+
+.education-content h3 {
+
+    font-size: 25px;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* Institution */
+
+.education-content h4 {
+
+    color: #d0d0da;
+
+    font-size: 17px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.education-content p {
+
+    color: #aaa;
+
+    line-height: 1.7;
+
+    max-width: 650px;
+
+}
+
+
+/* ==================================
+   MARKSHEET
+================================== */
+
+.marksheet-link {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 20px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.marksheet-link a {
+
+    color: #c17aff;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+
+}
+
+
+.marksheet-link a:hover {
+
+    color: #ffffff;
+
+    text-shadow:
+        0 0 10px #a855f7;
+
+}
+
+
+.marksheet-link span {
+
+    width: 100%;
+
+    padding-left: 30px;
+
+    color: #777;
+
+    font-size: 12px;
+
+}
+
+
+/* ==================================
+   UNIVERSITY / CBSE BOX
+================================== */
+
+.institution-box {
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding: 25px;
+
+    border: 1px solid rgba(168,85,247,0.25);
+
+    border-radius: 16px;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(168,85,247,0.12),
+            transparent 70%
+        );
+
+}
+
+
+.institution-icon {
+
+    font-size: 42px;
+
+    margin-bottom: 15px;
+
+    filter:
+        drop-shadow(
+            0 0 10px #a855f7
+        );
+
+}
+
+
+.institution-box h3 {
+
+    color: #b76cff;
+
+    font-size: 21px;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* ==================================
+   WEBSITE BUTTON
+================================== */
+
+.website-btn {
+
+    display: inline-block;
+
+    padding: 11px 17px;
+
+    border: 1px solid #a855f7;
+
+    border-radius: 10px;
+
+    color: white;
+
+    font-size: 13px;
+
+    transition: 0.3s;
+
+}
+
+
+.website-btn:hover {
+
+    background:
+        linear-gradient(
+            90deg,
+            #a855f7,
+            #4f7cff
+        );
+
+    border-color: transparent;
+
+    box-shadow:
+        0 0 20px rgba(168,85,247,0.35);
+
+    transform: translateY(-2px);
+
+}
+
+
+/* ==================================
+   MOBILE
+================================== */
+
+@media(max-width: 800px) {
+
+    .education-card {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .institution-box {
+
+        margin-top: 5px;
+
+    }
+
+}
+
+
+@media(max-width: 550px) {
+
+    .education-timeline {
+
+        padding-left: 30px;
+
+    }
+
+    .education-card {
+
+        padding: 22px;
+
+    }
+
+    .education-card::before {
+
+        left: -29px;
+
+    }
+
+    .education-content h3 {
+
+        font-size: 21px;
+
+    }
+
+}
+        /* =========================
+           CONTACT
+        ========================= */
+
+        .contact {
+            max-width: 850px;
+
+            margin: auto;
+
+            text-align: center;
+
+            padding: 55px 30px;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(168,85,247,0.12),
+                    transparent 65%
+                );
+
+            border: 1px solid rgba(255,255,255,0.1);
+
+            border-radius: 20px;
+        }
+
+        .contact h2 {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .contact h2 span {
+            color: #b55cff;
+        }
+
+        .contact p {
+            color: #aaa;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .contact-links {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .contact-links a {
+            padding: 12px 20px;
+
+            border: 1px solid rgba(255,255,255,0.15);
+
+            border-radius: 25px;
+
+            transition: 0.3s;
+        }
+
+        .contact-links a:hover {
+            border-color: #a855f7;
+
+            background: rgba(168,85,247,0.1);
+        }
+
+
+        .contact-links a {
+    padding: 12px 20px;
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.contact-links a:hover {
+    border-color: #a855f7;
+    background: rgba(168,85,247,0.1);
+}
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            text-align: center;
+
+            padding: 30px;
+
+            border-top: 1px solid rgba(255,255,255,0.08);
+
+            color: #777;
+        }
+
+        footer span {
+            color: #b55cff;
+        }
+
+        /* =========================
+           RESPONSIVE
+        ========================= */
+
+        @media(max-width: 950px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero p {
+                max-width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .buttons {
+                justify-content: center;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+
+            .skills {
+                grid-template-columns: repeat(2,1fr);
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+        @media(max-width: 600px) {
+
+            .hero {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .hero h1 {
+                font-size: 55px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .profile-area {
+                transform: scale(0.7);
+                margin-top: -50px;
+            }
+
+            .skills {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 5%;
+            }
+
+            .heading h2 {
+                font-size: 32px;
+            }
+
+            .contact h2 {
+                font-size: 35px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+<!-- ==================================
+     NAVIGATION
+=================================== -->
+
+<nav>
+
+    <div class="logo">
+        Piyush<span>.</span>
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+            <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+            <a href="#education">Education</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+    <a href="resume.pdf" class="download">
+        Download CV ↓
+    </a>
+
+</nav>
+
+
+<!-- ==================================
+     HOME
+=================================== -->
+
+<section class="hero" id="home">
+
+
+    <div class="hero-text">
+
+        <div class="hello">
+            Hello, I'm
+        </div>
+
+        <h1>
+            Piyush <span>Pal</span>
+        </h1>
+
+        <h2>
+            CSE (Data Science) Student in Galgotias University &
+            <br>
+            <span>Aspiring Full Stack Developer</span>
+        </h2>
+
+        <p>
+            I am a passionate and dedicated student with a strong interest in technology and development.
+            I enjoy creating innovative solutions and continuously learning new skills to enhance my expertise.
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                href="#projects"
+                class="btn primary"
+            >
+                🚀 Explore My Work
+            </a>
+
+            <a
+                href="#contact"
+                class="btn secondary"
+            >
+                ✉ Contact Me
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- PROFILE -->
+
+    <div class="profile-area">
+
+        <div class="orbit"></div>
+
+        <div class="orbit2"></div>
+
+        <div class="planet"></div>
+
+        <div class="profile">
+
+            <img
+                src="profile.jpeg"
+                alt="Piyush Pal"
+            >
+
+        </div>
+
+    </div>
+
+
+</section>
+
+
+<!-- ==================================
+     ABOUT
+=================================== -->
+
+<section id="about">
+
+    <div class="heading">
+
+        <small>
+            ABOUT ME
+        </small>
+
+        <h2>
+            Get To Know <span>Me!</span>
+        </h2>
+
+    </div>
+
+
+    <div class="about-container">
+
+
+        <div class="card">
+
+            <h3>
+                Who I Am
+            </h3>
+
+            <p>
+                I'm Piyush Pal, a B.Tech CSE
+                (Data Science) student at Galgotias University who is
+                passionate about technology and
+                development.
+            </p>
+
+            <p>
+                I enjoy turning ideas into real-world
+                projects. My interests include Web
+                Development, Data Science and
+                solving challenging problems.
+            </p>
+
+
+            <div class="details">
+
+                <div>
+                    <strong>Name:</strong>
+                    <span>Piyush Pal</span>
+                </div>
+
+                <div>
+                    <strong>Degree:</strong>
+                    <span>B.Tech CSE</span>
+                </div>
+
+                <div>
+                    <strong>Specialization:</strong>
+                    <span>Data Science</span>
+                </div>
+
+                <div>
+                    <strong>University:</strong>
+                    <span>Galgotias University</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <h3>
+                🚀 My Mission
+            </h3>
+
+            <p>
+                <b>Code. Create. Learn. Repeat.</b>
+            </p>
+
+            <p>
+                My goal is to become a skilled developer
+                who can combine programming, web
+                development and data science to build
+                meaningful digital solutions.
+            </p>
+
+            <p>
+                I am continuously improving my skills
+                by working on projects and learning
+                new technologies.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     SKILLS
+=================================== -->
+
+<section id="skills">
+
+    <div class="heading">
+
+        <small>
+            MY SKILLS
+        </small>
+
+        <h2>
+            What I <span>Know</span>
+        </h2>
+
+    </div>
+
+
+    <div class="skills">
+
+
+        <div class="skill">
+
+            <div class="skill-header">
+                <b>☕ Java</b>
+                <span>10%</span>
+            </div>
+
+            <div class="bar">
+                <div
+                    class="progress"
+                    style="width:10%"
+                ></div>
+            </div>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-header">
+                <b>🐍 Python</b>
+                <span>50%</span>
+            </div>
+
+            <div class="bar">
+                <div
+                    class="progress"
+                    style="width:50%"
+                ></div>
+            </div>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-header">
+                <b>© C</b>
+                <span>10%</span>
+            </div>
+
+            <div class="bar">
+                <div
+                    class="progress"
+                    style="width:10%"
+                ></div>
+            </div>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-header">
+                <b>🌐 HTML</b>
+                <span>20%</span>
+            </div>
+
+            <div class="bar">
+                <div
+                    class="progress"
+                    style="width:20%"
+                ></div>
+            </div>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-header">
+                <b>🎨 CSS</b>
+                <span>50%</span>
+            </div>
+
+            <div class="bar">
+                <div
+                    class="progress"
+                    style="width:50%"
+                ></div>
+            </div>
+
+        </div>
+
+
+        <div class="skill">
+
+            <div class="skill-header">
+                <b>🗄 SQL</b>
+                <span>50%</span>
+            </div>
+
+            <div class="bar">
+                <div
+                    class="progress"
+                    style="width:50%"
+                ></div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     PROJECTS
+=================================== -->
+
+<section id="projects">
+
+    <div class="heading">
+
+        <small>
+            MY PROJECTS
+        </small>
+
+        <h2>
+            Some Things I've <span>Built</span>
+        </h2>
+
+    </div>
+
+
+    <div class="projects">
+
+
+        <div class="project">
+
+            <div class="project-icon">
+                💻
+            </div>
+
+            <h3>
+                Personal Portfolio
+            </h3>
+
+            <p>
+                A modern responsive portfolio
+                website built using HTML, CSS
+                and JavaScript.
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">
+                    HTML
+                </span>
+
+                <span class="tag">
+                    CSS
+                </span>
+
+                <span class="tag">
+                    JavaScript
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-icon">
+                🎓
+            </div>
+
+            <h3>
+                Student Management System, not now working on it
+            </h3>
+
+            <p>
+                A Java based application to
+                manage student records and
+                information.
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">
+                    Java
+                </span>
+
+                <span class="tag">
+                    OOP
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="project">
+
+            <div class="project-icon">
+                📊
+            </div>
+
+            <h3>
+                Data Analysis Project, not now working on it
+            </h3>
+
+            <p>
+                Data analysis and visualization
+                project using Python and
+                data science tools.
+            </p>
+
+            <div class="tags">
+
+                <span class="tag">
+                    Python
+                </span>
+
+                <span class="tag">
+                    Pandas
+                </span>
+
+                <span class="tag">
+                    SQL
+                </span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ==============================
+     EDUCATION SECTION
+================================ -->
+
+<section id="education">
+
+    <div class="heading">
+
+        <small>EDUCATION</small>
+
+        <h2>
+            My <span>Journey</span>
+        </h2>
+
+    </div>
+
+
+    <div class="education-timeline">
+
+
+        <!-- ==========================
+             B.TECH
+        =========================== -->
+
+        <div class="education-card">
+
+            <div class="education-content">
+
+                <span class="year">
+                    2025 - Present
+                </span>
+
+                <h3>
+                    B.Tech CSE (Data Science)
+                </h3>
+
+                <h4>
+                    Galgotias University
+                </h4>
+
+                <p>
+                    Currently pursuing my B.Tech in Computer Science
+                    and Engineering with a specialization in Data
+                    Science at Galgotias University, aiming to graduate
+                    in 2029.
+                </p>
+
+
+                <!-- SEMESTER 1 -->
+
+                <div class="marksheet-link">
+
+                    📄
+
+                    <a
+                        href="Marksheet1.pdf"
+                        target="_blank"
+                    >
+                        See Marksheet ↗
+                    </a>
+
+                    <span>
+                        SEMESTER 1 - 2025-2026
+                    </span>
+
+                </div>
+
+
+                <!-- SEMESTER 2 -->
+
+                <div class="marksheet-link">
+
+                    📄
+
+                    <a
+                        href="Marksheet2.pdf"
+                        target="_blank"
+                    >
+                        See Marksheet ↗
+                    </a>
+
+                    <span>
+                        SEMESTER 2 - 2025-2026
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- UNIVERSITY BOX -->
+
+            <div class="institution-box">
+
+                <div class="institution-icon">
+                    🏛️
+                </div>
+
+                <h3>
+                    Galgotias University
+                </h3>
+
+                <a
+                    href="https://www.galgotiasuniversity.edu.in/"
+                    target="_blank"
+                    class="website-btn"
+                >
+                    Visit University Website ↗
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==========================
+             CLASS 12
+        =========================== -->
+
+        <div class="education-card">
+
+            <div class="education-content">
+
+                <span class="year">
+                    2024 - 2025
+                </span>
+
+                <h3>
+                    Class 12
+                </h3>
+
+                <h4>
+                    Senior Secondary Education
+                </h4>
+
+                <p>
+                    Completed my Class 12th from PM SHRI Kendriya
+                    Vidyalaya Babina Cantt, Jhansi, securing
+                    <strong>75.6%</strong> in the CBSE Senior School
+                    Certificate Examination 2025.
+                </p>
+
+
+                <div class="marksheet-link">
+
+                    📄
+
+                    <a
+                        href="Marksheet12.jpeg"
+                        target="_blank"
+                    >
+                        See Marksheet ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CBSE BOX -->
+
+            <div class="institution-box">
+
+                <div class="institution-icon">
+                    🏛️
+                </div>
+
+                <h3>
+                    CBSE
+                </h3>
+
+                <a
+                    href="https://www.cbse.gov.in/"
+                    target="_blank"
+                    class="website-btn"
+                >
+                    Visit CBSE Website ↗
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ==========================
+             CLASS 10
+        =========================== -->
+
+        <div class="education-card">
+
+            <div class="education-content">
+
+                <span class="year">
+                    2022 - 2023
+                </span>
+
+                <h3>
+                    Class 10
+                </h3>
+
+                <h4>
+                    Secondary Education
+                </h4>
+
+                <p>
+                    Completed my Class 10th from PM SHRI Kendriya Vidyalaya,
+                    Babina Cantt, Jhansi, securing
+                    <strong>76%</strong> in the CBSE Board Examination.
+                </p>
+
+
+                <div class="marksheet-link">
+
+                    📄
+
+                    <a
+                        href="Marksheet10.jpeg"
+                        target="_blank"
+                    >
+                        See Marksheet ↗
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CBSE BOX -->
+
+            <div class="institution-box">
+
+                <div class="institution-icon">
+                    🏛️
+                </div>
+
+                <h3>
+                    CBSE
+                </h3>
+
+                <a
+                    href="https://www.cbse.gov.in/"
+                    target="_blank"
+                    class="website-btn"
+                >
+                    Visit CBSE Website ↗
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==================================
+     CONTACT
+=================================== -->
+
+<section id="contact">
+
+    <div class="contact">
+
+        <h2>
+            Let's <span>Connect!</span>
+        </h2>
+
+        <p>
+            Have a project idea, collaboration
+            opportunity or simply want to say hello?
+            Feel free to connect with me.
+        </p>
+
+
+        <div class="contact-links">
+
+            <!-- CHANGE YOUR EMAIL -->
+
+            <a href="mailto:piyushpalc@gmail.com">
+                ✉ Email
+            </a>
+
+
+            <a
+                href="https://github.com/piyush-pal-hg"
+                target="_blank"
+            >
+                🐱 GitHub
+            </a>
+
+
+            <a
+                href="https://www.linkedin.com/in/piyush-pal-6079563ab"
+                target="_blank"
+            >
+                🚀LinkedIn
+            </a>
+
+            <a
+                href="https://www.instagram.com/piyushpal123/"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                📷 Instagram
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==================================
+     FOOTER
+=================================== -->
+
+<footer>
+
+    © 2026 Piyush Pal.
+    Built with <span>♥</span> and code.
+
+</footer>
+
+
+</body>
+</html>
